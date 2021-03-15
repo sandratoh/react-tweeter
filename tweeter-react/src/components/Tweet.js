@@ -5,6 +5,10 @@ export const Tweet = props => {
   const {name, handle, text, profile_image, date} = props
 
   return(
+    <>
+      {name && handle && text && profile_image && date &&
+      (
+
     <article className="tweet">
       <header>
         <img src={profile_image} alt="avatar" />
@@ -23,5 +27,8 @@ export const Tweet = props => {
         </div>
       </footer>
     </article>
+      )
+      }
+    </>
   )
 }
