@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import { Navigation } from './components/Navigation';
 import { Profile } from './components/Profile';
 import { TweetForm } from './components/TweetForm';
 import { Tweet } from './components/Tweet';
 
-const tweetsData = [
+const initialTweetData = [
   {
     name:'Francis Bourgouin',
     handle: '@Cadaei',
@@ -23,19 +23,33 @@ const tweetsData = [
 ]
 
 function App() {
-  const tweets = tweetsData.map((tweetsData, index) => {
+  const [tweetData, setTweetData] = useState(initialTweetData);
+
+  const tweets = tweetData.map((tweetData, index) => {
     return <Tweet
       key={index}
-      name={tweetsData.name}
-      handle={tweetsData.handle}
-      profile_image={tweetsData.profile_image}
-      text={tweetsData.text}
-      date={tweetsData.date}
+      name={tweetData.name}
+      handle={tweetData.handle}
+      profile_image={tweetData.profile_image}
+      text={tweetData.text}
+      date={tweetData.date}
     />
-  })
+  });
+
+  const addNewTweet = () => {
+    const newTweet = {
+      name:'Amy Manell',
+      handle: '@amyhere',
+      profile_image: 'https://i.imgur.com/2WZt0D6.png',
+      text: 'What do you think of hexagons?',
+      date: '5 days ago'
+    }
+
+    setTweetData([newTweet, ...tweetData]);
+  };
 
   return (
-    <div className="App">
+    <div className="App" onClick={addNewTweet}>
       <Navigation />
       <main className="container">
         <div className="user-panel">
