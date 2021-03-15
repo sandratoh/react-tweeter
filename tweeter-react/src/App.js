@@ -36,12 +36,12 @@ function App() {
     />
   });
 
-  const addNewTweet = () => {
+  const addNewTweet = text => {
     const newTweet = {
       name:'Amy Manell',
       handle: '@amyhere',
       profile_image: 'https://i.imgur.com/2WZt0D6.png',
-      text: 'What do you think of hexagons?',
+      text,
       date: '5 days ago'
     }
 
@@ -49,12 +49,12 @@ function App() {
   };
 
   return (
-    <div className="App" onClick={addNewTweet}>
+    <div className="App">
       <Navigation />
       <main className="container">
         <div className="user-panel">
           <Profile />
-          <TweetForm />
+          <TweetForm  addNewTweet={addNewTweet}/>
         </div>
         <div id="tweets-container">
           {tweets}
