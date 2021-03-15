@@ -1,0 +1,81 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/*
+ * Global layout stuff
+ */
+
+body {
+  color: #353D46;
+  font-size: 24px;
+  font-family: 'Source Sans Pro', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 320px;
+}
+
+main {
+  width: 100%;
+  background-color: #f4f1ec;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.user-panel {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+
+/* 
+ * Tweet Post stuff
+ */
+
+#tweets-container {
+  width: 90%;
+  display: flex;
+  margin: 32px 0;
+  flex-direction: column;
+}
+
+/* 
+ * Desktop Layout
+ */
+
+ @media only screen and (min-width: 1024px) {
+  body {
+    flex-direction: row;
+  }
+
+  main {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .user-panel {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 30%;
+    color: #FFFFFF;
+    min-height: 100vh;
+    margin-top: 0;
+    padding-top: 120px;
+    justify-content: center;
+    overflow-y: scroll;
+    box-shadow: 8px 8px 24px rgba(0, 0, 0, 0.15);
+  }
+
+  #tweets-container {
+    width: 70%;
+    margin: 0 2.5rem;
+    padding-top: 120px;
+  }
+}

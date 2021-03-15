@@ -1,11 +1,12 @@
 import React from 'react';
+import './Profile.css';
 
 export const Profile = () => {
   return(
     <header>
-      <span class="avatar-outline">
-        <div class="image-mask">
-          <img src="/images/profile-pug.jpg" alt="avatar" class="profile-pic" /> 
+      <span className="avatar-outline">
+        <div className="image-mask">
+          <img className="profile-pic" src="../images/profile-pug.jpg" alt="avatar" /> 
         </div>
       </span>
       <br />

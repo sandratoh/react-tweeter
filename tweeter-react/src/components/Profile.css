@@ -1,0 +1,69 @@
+header {
+  height: 400px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-image: url("../images/dark-blue-bg.jpg");
+  background-color: #F3A712;
+  margin-top: 120px;
+  box-shadow: 8px 8px 24px 8px rgba(0, 0, 0, 0.12);
+}
+
+.avatar-outline {
+  height: 184px;
+  width: 184px;
+  background-color: #d4d4d4;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.38);
+}
+
+.image-mask {
+  width: 160px;
+  height: 160px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.profile-pic {
+margin: 0 auto;
+height: auto;
+width: 160px;
+}
+
+/* 
+ * Desktop Layout
+ */
+
+ @media only screen and (min-width: 1024px) {
+  .user-panel {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: vh;
+    background-image: url("../images/dark-blue-bg.jpg");
+  }
+  
+  header {
+    margin-top: 0px;
+    height: 298px;
+    justify-content: space-evenly;
+    background-image: none;
+    background-color: transparent;
+    box-shadow: none;
+  }
+
+  br {
+    display: none;
+  }
+
+  .user-panel h2 {
+    margin: 0;
+  }
+}
